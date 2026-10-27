@@ -7,10 +7,13 @@ authors = [
     { email = "anthony@builtbyanthony.dev" }
 ]
 requires-python = ">=3.11,<3.12"
-dependencies = []
+dependencies = [
+    "python-dotenv>=1.2.4",
+    "requests>=2.34.2",
+]
 
 [project.scripts]
-econ-data = "econ_data:main"
+econ-data = "econ_data.cli:main"
 
 [build-system]
 requires = ["uv_build>=0.12.23,<0.13.0"]
