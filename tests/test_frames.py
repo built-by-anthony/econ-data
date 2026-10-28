@@ -1,11 +1,11 @@
 import json
 from datetime import date
 
-from pyspark.sql import SparkSession
 import pyspark.sql.functions as F
+from pyspark.sql import SparkSession
 
-from econ_data.fred import parse_fred
 from econ_data.frames import FRED_OBSERVATION_SCHEMA, to_dataframe
+from econ_data.fred import parse_fred
 
 
 def test_dataframe_uses_explicit_schema(spark: SparkSession) -> None:
