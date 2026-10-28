@@ -8,7 +8,7 @@ FRED_KEY = os.getenv("FRED_KEY")
 series_id = "DGS10"
 
 
-def main():
+def main() -> None:
     import logging
 
     logging.basicConfig(

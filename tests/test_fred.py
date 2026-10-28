@@ -7,7 +7,7 @@ import pytest
 from econ_data.fred import parse_fred
 
 
-def test_missing_value_becomes_none():
+def test_missing_value_becomes_none() -> None:
     with open("tests/fixtures/dgs10_sample.json") as f:
         fred_dict = json.load(f)
 
@@ -22,7 +22,7 @@ def test_missing_value_becomes_none():
     assert holiday["value"] is None
 
 
-def test_normal_value_parses_to_decimal():
+def test_normal_value_parses_to_decimal() -> None:
     with open("tests/fixtures/dgs10_sample.json") as f:
         fred_dict = json.load(f)
 
@@ -40,12 +40,12 @@ def test_normal_value_parses_to_decimal():
     assert target["series_id"] == "DGS10"
 
 
-def test_empty_observations_returns_empty_list():
+def test_empty_observations_returns_empty_list() -> None:
     data = {"count": 0, "observations": []}
     assert parse_fred(data, series_id="DGS10") == []
 
 
-def test_count_error_raises():
+def test_count_error_raises() -> None:
     with open("tests/fixtures/dgs10_sample.json") as f:
         fred_dict = json.load(f)
 
@@ -55,7 +55,7 @@ def test_count_error_raises():
         parse_fred(fred_dict, series_id="DGS10")
 
 
-def test_decimal_value_error():
+def test_decimal_value_error() -> None:
     with open("tests/fixtures/dgs10_sample.json") as f:
         fred_dict = json.load(f)
 
