@@ -9,7 +9,7 @@ repos:
      
       - id: black 
         name: black 
-        entry: uv run black 
+        entry: uv run black src tests 
         language: system
         types: [python]
 

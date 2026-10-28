@@ -3,6 +3,7 @@ from collections.abc import Iterator
 import pytest
 from pyspark.sql import SparkSession
 
+
 @pytest.fixture(scope="session")
 def spark() -> Iterator[SparkSession]:
     session = (
