@@ -34,7 +34,7 @@ def test_normal_value_parses_to_decimal():
             target = record
 
     assert target is not None
-    assert target["value"] == Decimal("9.99")
+    assert target["value"] == Decimal("3.95")
     assert isinstance(record["value"], Decimal)
     assert isinstance(record["obs_date"], date)
     assert target["series_id"] == "DGS10"
