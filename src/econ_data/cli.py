@@ -21,7 +21,7 @@ def main():
     # Sample data
     import json
 
-    with open("tests/dgs10_sample.json") as f:
+    with open("tests/fixtures/dgs10_sample.json") as f:
         fred_dict = json.load(f)
     # End Sample data
 

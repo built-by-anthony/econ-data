@@ -37,5 +37,5 @@ target-version = "py311"
 [tool.ruff.lint]
 extend-select = ["I", "B", "UP"]
 
-[tool.pytest.ini.options]
+[tool.pytest.ini_options]
 testpaths = ["tests"]
