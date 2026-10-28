@@ -20,7 +20,13 @@ def fetch_fred(series_id: str, api_key: str) -> dict[str, Any]:
     )
 
     response.raise_for_status()
-    return response.json()
+
+    data = response.json()
+    if not isinstance(data, dict):
+        raise TypeError(
+            f"expected a JSON object from FRED for {series_id}, got {type(data).__name__}"
+        )
+    return data
 
 
 def parse_fred(data: dict[str, Any], series_id: str) -> list[dict[str, Any]]:
